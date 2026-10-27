@@ -207,7 +207,7 @@
       img.src = 'kernwerk.png';
       img.alt = 'KERNWERK DIGITAL';
       img.loading = 'eager';
-      img.className = 'h-8 w-8 shrink-0 object-contain md:h-9 md:w-9';
+      img.className = 'h-10 w-10 shrink-0 object-contain md:h-12 md:w-12';
 
       const wordmark = document.createElement('span');
       wordmark.className = 'kw-display text-[15px] font-semibold leading-[.9] tracking-[-.02em]';
