@@ -201,13 +201,13 @@
 
   function replaceLogoBlock() {
     document.querySelectorAll('[data-testid="button-logo"]').forEach((logoLink) => {
-      logoLink.className = 'group flex items-center gap-1 text-left';
+      logoLink.className = 'group flex items-center gap-3 text-left';
 
       const img = logoLink.querySelector('img[src="kernwerk.png"]') || document.createElement('img');
       img.src = 'kernwerk.png';
       img.alt = 'KERNWERK DIGITAL';
       img.loading = 'eager';
-      img.className = 'h-14 w-14 shrink-0 object-contain md:h-16 md:w-16';
+      img.className = 'h-8 w-8 shrink-0 object-contain md:h-9 md:w-9';
 
       if (!img.parentElement) {
         const wordmark = document.createElement('span');
@@ -217,7 +217,7 @@
         logoLink.appendChild(img);
         logoLink.appendChild(wordmark);
       } else {
-        img.className = 'h-14 w-14 shrink-0 object-contain md:h-16 md:w-16';
+        img.className = 'h-8 w-8 shrink-0 object-contain md:h-9 md:w-9';
       }
     });
   }
