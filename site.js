@@ -252,7 +252,7 @@
     localStorage.setItem('kernwerk-theme', theme);
   }
 
-  let language = localStorage.getItem('kernwerk-language') || 'de';
+  let language = localStorage.getItem('kernwerk-language') || 'en';
   let theme = localStorage.getItem('kernwerk-theme') || 'light';
 
   function addTermsLink() {
