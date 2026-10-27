@@ -201,21 +201,24 @@
 
   function replaceLogoBlock() {
     document.querySelectorAll('[data-testid="button-logo"]').forEach((logoLink) => {
-      if (logoLink.querySelector('img[src="kernwerk.png"]')) return;
+      logoLink.className = 'group flex items-center gap-2 text-left';
 
-      const img = document.createElement('img');
+      const img = logoLink.querySelector('img[src="kernwerk.png"]') || document.createElement('img');
       img.src = 'kernwerk.png';
       img.alt = 'KERNWERK DIGITAL';
       img.loading = 'eager';
-      img.className = 'h-10 w-10 shrink-0 object-contain md:h-12 md:w-12';
+      img.className = 'h-12 w-12 shrink-0 object-contain md:h-14 md:w-14';
 
-      const wordmark = document.createElement('span');
-      wordmark.className = 'kw-display text-[15px] font-semibold leading-[.9] tracking-[-.02em]';
-      wordmark.innerHTML = 'KERNWERK<br><span class="text-[#a7c7ce]">DIGITAL</span>';
-
-      logoLink.innerHTML = '';
-      logoLink.appendChild(img);
-      logoLink.appendChild(wordmark);
+      if (!img.parentElement) {
+        const wordmark = document.createElement('span');
+        wordmark.className = 'kw-display text-[15px] font-semibold leading-[.9] tracking-[-.02em]';
+        wordmark.innerHTML = 'KERNWERK<br><span class="text-[#a7c7ce]">DIGITAL</span>';
+        logoLink.innerHTML = '';
+        logoLink.appendChild(img);
+        logoLink.appendChild(wordmark);
+      } else {
+        img.className = 'h-12 w-12 shrink-0 object-contain md:h-14 md:w-14';
+      }
     });
   }
 
